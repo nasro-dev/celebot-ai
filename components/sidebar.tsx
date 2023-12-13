@@ -16,7 +16,7 @@ export const Sidebar = () => {
         },
         {
             icon: Plus,
-            href: "/celepot/new",
+            href: "/companion/new",
             label: "Create",
             pro: true,
         },
@@ -45,9 +45,7 @@ export const Sidebar = () => {
                             <div className="flex flex-col gap-y-2 items-center flex-1">
                                <route.icon className="h-5 w-5"/>
                                {route.label}
-
                             </div>
-
                        </div>
                  ))}
                 </div>
