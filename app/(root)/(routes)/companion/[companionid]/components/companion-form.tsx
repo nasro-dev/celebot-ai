@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Separator } from "@/components/ui/separator";
+import { ImageUpload } from "@/components/image-upload";
 interface CompanionFormProps{
     initialData: Companion | null;
     categories: Category[];
@@ -61,13 +62,17 @@ export const CompanionForm =  ({categories,initialData}:CompanionFormProps) => {
                 </div>
                 <FormField
                      name="src"
-                     render={({field})=>{
+                     render={({ field })=>(
                         <FormItem className="flex flex-col items-center justify-center space-y-4 " >
                           <FormControl>
-                            Image Upload Component
+                            <ImageUpload 
+                              disabled={isLoading}
+                              onChange={field.onChange}
+                              value={field.value}
+                            />
                           </FormControl>
                         </FormItem>
-                     }}
+                    )}
 
                 />
                </form>
